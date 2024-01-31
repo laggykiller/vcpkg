@@ -431,8 +431,8 @@ macro(z_vcpkg_acquire_msys_declare_all_packages)
         DEPS gmp
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://mirror.msys2.org/msys/x86_64/msys2-runtime-3.4.7-3-x86_64.pkg.tar.zst"
-        SHA512 5afd472c4d6cac487e5cc6eb8e4b40e91499dfc140e2f1529c6ff0954b2897746e7e17a4aa5df4e339ba964a9eab94ca6cd50ad9acc6dd1c89aa18ea59476671
+        URL "https://mirror.msys2.org/msys/x86_64/msys2-runtime-3.4.8-1-x86_64.pkg.tar.zst"
+        SHA512 edc0da4f22a2644c3693330bc67f89d2926a9dd0122748d95ca6ba06fb8de91e80fea4087ade3a2bf2f0c5b8c7b7489c14e167746729e5434e89d887f9753f0e
     )
     z_vcpkg_acquire_msys_declare_package(
         URL "https://mirror.msys2.org/msys/x86_64/ncurses-6.4-2-x86_64.pkg.tar.zst"
