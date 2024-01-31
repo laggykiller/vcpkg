@@ -16,7 +16,7 @@ elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL "OpenBSD")
     set(version_command --version)
 elseif(CMAKE_HOST_WIN32)
     if(NOT EXISTS "${PKGCONFIG}")
-        set(program_version 2.0.3)
+        set(program_version 2.0.0)
         if(DEFINED ENV{PROCESSOR_ARCHITEW6432})
             set(host_arch "$ENV{PROCESSOR_ARCHITEW6432}")
         else()
@@ -27,24 +27,24 @@ elseif(CMAKE_HOST_WIN32)
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://repo.msys2.org/mingw/clangarm64/mingw-w64-clang-aarch64-pkgconf-1~2.0.3-2-any.pkg.tar.zst"
-                    7e9015f5a650706c75523255753b31f4ec32ead7a06b09adf5a611ad4cbb155756b234c70b461f9f28e5f9fe032269cbfd0bee4f011510c127d56474ed547f61
+                    "https://repo.msys2.org/mingw/clangarm64/mingw-w64-clang-aarch64-pkgconf-1~2.0.0-1-any.pkg.tar.zst"
+                    32a57c443968adaa675a293b40f37dcb7026bab026d6fe99b963ac4d27c128ca91c4c855af78593a1e53bf82cb962f19b5b3f5fb92c7d97093ee3c49b2501698
             )
             set("${program}" "${PKGCONFIG_ROOT}/clangarm64/bin/pkg-config.exe" CACHE INTERNAL "")
         elseif("${host_arch}" MATCHES "64")
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~2.0.3-2-any.pkg.tar.zst"
-                    b577c218999ce3af4cb728644dfb91c9c2af223b4d6cf2ca7300e937b917122c55fedb5ae52b96bd1c85c669e33e419e8460fe1fc0b98b1f4498f143e704b7b6
+                    "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~2.0.0-1-any.pkg.tar.zst"
+                    83014549bccbc4468fd26e6d08c6857745d3c78849adbc64b908674a6be8ce6f3b9607bdfeec4cd7c166293e9925d3aae93f30daaadc4002059f5fe2a3c63b65
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw64/bin/pkg-config.exe" CACHE INTERNAL "")
         else()
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-pkgconf-1~2.0.3-2-any.pkg.tar.zst"
-                    637cfb4594cdabe09f419a58c2727e11c61930f2949d904bcc3dcd45de238d23e1c547e0b2b364bd405501014d1cc971cbfe006ace0991a0498eeca24af98c97
+                    "https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-pkgconf-1~2.0.0-1-any.pkg.tar.zst"
+                    f3c087eb2cd59780897945915183a38af63be3ed6f7203b40ab917f33af61a261e7c8b97b625b9665c92e2df965faa2ceb5642fd55584b4d3f9c7970eaa3216c
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw32/bin/pkg-config.exe" CACHE INTERNAL "")
         endif()
