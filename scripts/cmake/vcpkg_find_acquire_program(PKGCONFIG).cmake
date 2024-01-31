@@ -35,7 +35,7 @@ elseif(CMAKE_HOST_WIN32)
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1.8.0-2-any.pkg.tar.zst"
+                "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1.8.0-2-any.pkg.tar.zst"
                 55e60172d581e14e70c30532d45e6828fc31da70e878914b877d749cd20ac1abc047e6e04f171760ee8abb635ca07106853b33d6e84223d61d40013005620e43
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw64/bin/pkg-config.exe" CACHE INTERNAL "")
