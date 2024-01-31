@@ -17,11 +17,11 @@ elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL "OpenBSD")
 elseif(CMAKE_HOST_WIN32)
     if(NOT EXISTS "${PKGCONFIG}")
         set(program_version 1.8.0)
-        if(DEFINED ENV{PROCESSOR_ARCHITEW6432})
-            set(host_arch "$ENV{PROCESSOR_ARCHITEW6432}")
-        else()
-            set(host_arch "$ENV{PROCESSOR_ARCHITECTURE}")
-        endif()
+        # if(DEFINED ENV{PROCESSOR_ARCHITEW6432})
+        #     set(host_arch "$ENV{PROCESSOR_ARCHITEW6432}")
+        # else()
+        #     set(host_arch "$ENV{PROCESSOR_ARCHITECTURE}")
+        # endif()
 
         if("${host_arch}" STREQUAL "ARM64")
             vcpkg_acquire_msys(PKGCONFIG_ROOT
@@ -31,14 +31,14 @@ elseif(CMAKE_HOST_WIN32)
                 f682bbeb4588a169a26d3c9c1ce258c0022954fa11a64e05cd803bcbb8c4e2442022c0c6bc7e54d3324359c80ea67904187d4cb3b682914f5f14a03251daae7c
             )
             set("${program}" "${PKGCONFIG_ROOT}/clangarm64/bin/pkg-config.exe" CACHE INTERNAL "")
-        elseif("${host_arch}" MATCHES "64")
-            vcpkg_acquire_msys(PKGCONFIG_ROOT
-                NO_DEFAULT_PACKAGES
-                DIRECT_PACKAGES
-                "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1.8.0-2-any.pkg.tar.zst"
-                55e60172d581e14e70c30532d45e6828fc31da70e878914b877d749cd20ac1abc047e6e04f171760ee8abb635ca07106853b33d6e84223d61d40013005620e43
-            )
-            set("${program}" "${PKGCONFIG_ROOT}/mingw64/bin/pkg-config.exe" CACHE INTERNAL "")
+        # elseif("${host_arch}" MATCHES "64")
+        #     vcpkg_acquire_msys(PKGCONFIG_ROOT
+        #         NO_DEFAULT_PACKAGES
+        #         DIRECT_PACKAGES
+        #         "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1.8.0-2-any.pkg.tar.zst"
+        #         55e60172d581e14e70c30532d45e6828fc31da70e878914b877d749cd20ac1abc047e6e04f171760ee8abb635ca07106853b33d6e84223d61d40013005620e43
+        #     )
+        #     set("${program}" "${PKGCONFIG_ROOT}/mingw64/bin/pkg-config.exe" CACHE INTERNAL "")
         else()
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
