@@ -411,8 +411,8 @@ macro(z_vcpkg_acquire_msys_declare_all_packages)
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://mirror.msys2.org/msys/x86_64/libzstd-1.5.4-1-x86_64.pkg.tar.zst"
-        SHA512 5aed6a9b2e40759144878f1b5f888f221016fe3fb23ba04f17d515ca51b78c592f79747d90fcc096c735d74cccfeb22c19f2154dfa49d14bedc6c306f0c07759
+        URL "https://mirror.msys2.org/msys/x86_64/libzstd-1.5.5-1-x86_64.pkg.tar.zst"
+        SHA512 c3d491f90bef0cbd7447303ff6f5a647e9fcf7bb0af9116cfe5fe421180e2283ec9403c768caa9434e9b158ce6ebde1a4750c56db8f67dfac4d6282d0ac30413
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -431,7 +431,7 @@ macro(z_vcpkg_acquire_msys_declare_all_packages)
         DEPS gmp
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://mirror.msys2.org/msys/x86_64/msys2-runtime-3.4.9-3-x86_64.pkg.tar.zst"
+        URL "https://mirror.msys2.org/msys/x86_64/msys2-runtime-3.4.10-4-x86_64.pkg.tar.zst"
         SHA512 2695dd70a7f93926cc7077dc6f57a273a408aa3943a44268870d01096b6537904890fc302838f036ecc13ffa662f4ed7d56f9fc146b41fd777390c9cbf0b6a77
     )
     z_vcpkg_acquire_msys_declare_package(
