@@ -449,8 +449,8 @@ macro(z_vcpkg_acquire_msys_declare_all_packages)
         DEPS coreutils libxcrypt sh
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~1.9.5-1-any.pkg.tar.zst"
-        SHA512 042dd1bf7c906d6b2011491bc84aa41fb3a56222d6d89451e23ddd089e5273328776f79510ae268546dd182802581a80312d2b8d6d45ffd2921d73d6215e6273
+        URL "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~2.0.0-1-any.pkg.tar.zst"
+        SHA512 83014549bccbc4468fd26e6d08c6857745d3c78849adbc64b908674a6be8ce6f3b9607bdfeec4cd7c166293e9925d3aae93f30daaadc4002059f5fe2a3c63b65
         PROVIDES pkg-config
     )
     z_vcpkg_acquire_msys_declare_package(
