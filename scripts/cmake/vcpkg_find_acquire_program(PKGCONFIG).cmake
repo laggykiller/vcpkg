@@ -27,24 +27,24 @@ elseif(CMAKE_HOST_WIN32)
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                "https://repo.msys2.org/mingw/clangarm64/mingw-w64-clang-aarch64-pkgconf-1~2.0.0-1-any.pkg.tar.zst"
-                32a57c443968adaa675a293b40f37dcb7026bab026d6fe99b963ac4d27c128ca91c4c855af78593a1e53bf82cb962f19b5b3f5fb92c7d97093ee3c49b2501698
+                "https://repo.msys2.org/mingw/clangarm64/mingw-w64-clang-aarch64-pkgconf-1~1.9.5-1-any.pkg.tar.zst"
+                f44bc7fe43f41a3329dd86e39033e06929066a11a77143b995f1b23be256054670eb508c6a48cd9530f08ce48a35204c374945d463f0e887b7dc641d63f00cb0
             )
             set("${program}" "${PKGCONFIG_ROOT}/clangarm64/bin/pkg-config.exe" CACHE INTERNAL "")
         elseif("${host_arch}" MATCHES "64")
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~2.0.0-1-any.pkg.tar.zst"
-                83014549bccbc4468fd26e6d08c6857745d3c78849adbc64b908674a6be8ce6f3b9607bdfeec4cd7c166293e9925d3aae93f30daaadc4002059f5fe2a3c63b65
+                "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~1.9.5-1-any.pkg.tar.zst"
+                042dd1bf7c906d6b2011491bc84aa41fb3a56222d6d89451e23ddd089e5273328776f79510ae268546dd182802581a80312d2b8d6d45ffd2921d73d6215e6273
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw64/bin/pkg-config.exe" CACHE INTERNAL "")
         else()
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                "https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-pkgconf-1~2.0.0-1-any.pkg.tar.zst"
-                f3c087eb2cd59780897945915183a38af63be3ed6f7203b40ab917f33af61a261e7c8b97b625b9665c92e2df965faa2ceb5642fd55584b4d3f9c7970eaa3216c
+                "https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-pkgconf-1~1.9.5-1-any.pkg.tar.zst"
+                ac28090242a2f679af4dede5f63342113757cc78d35add7cc0d2c7ed928e373aa626338ff741c71dc28d67f16714d51d7e6b368551cc74a3610ca9af10327cfe
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw32/bin/pkg-config.exe" CACHE INTERNAL "")
         endif()
