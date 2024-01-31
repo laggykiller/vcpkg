@@ -60,9 +60,9 @@ function(z_vcpkg_acquire_msys_declare_package)
         endif()
         get_filename_component(filename "${arg_URL}" NAME)
     else()
-        # if(NOT arg_URL MATCHES [[^https://mirror\.msys2\.org/.*/(([^/]*)-[^-/]+-[^-/]+-[^-/]+\.pkg\.tar\.(xz|zst))$]])
-        #     message(FATAL_ERROR "internal error: regex does not match supplied URL to vcpkg_acquire_msys: ${arg_URL}")
-        # endif()
+        if(NOT arg_URL MATCHES [[^https://mirror\.msys2\.org/.*/(([^/]*)-[^-/]+-[^-/]+-[^-/]+\.pkg\.tar\.(xz|zst))$]])
+            message(FATAL_ERROR "internal error: regex does not match supplied URL to vcpkg_acquire_msys: ${arg_URL}")
+        endif()
         set(filename "msys2-${CMAKE_MATCH_1}")
         if(NOT DEFINED arg_NAME)
             set(arg_NAME "${CMAKE_MATCH_2}")
@@ -449,8 +449,8 @@ macro(z_vcpkg_acquire_msys_declare_all_packages)
         DEPS coreutils libxcrypt sh
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://github.com/laggykiller/MINGW-packages/releases/download/pkgconf-traverse_id-1/mingw-w64-x86_64-pkgconf-1.478199b425b46e9dae36bb174f1bd08bf3ffb0f1-1-any.pkg.tar.zst"
-        SHA512 af8a765cf2607ce0bb743cf7633ff56980d320f5ae3219fe62ff2e652e6500ecd52fd200b5b6c389d53b72324e8b8d7a2ac503aee6a7b900520e22245b3da0ed
+        URL "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1.8.0-2-any.pkg.tar.zst"
+        SHA512 55e60172d581e14e70c30532d45e6828fc31da70e878914b877d749cd20ac1abc047e6e04f171760ee8abb635ca07106853b33d6e84223d61d40013005620e43
         PROVIDES pkg-config
     )
     z_vcpkg_acquire_msys_declare_package(

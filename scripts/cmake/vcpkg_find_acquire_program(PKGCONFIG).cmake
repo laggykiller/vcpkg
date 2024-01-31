@@ -16,7 +16,7 @@ elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL "OpenBSD")
     set(version_command --version)
 elseif(CMAKE_HOST_WIN32)
     if(NOT EXISTS "${PKGCONFIG}")
-        set(program_version 1.9.5)
+        set(program_version 1.8.0)
         if(DEFINED ENV{PROCESSOR_ARCHITEW6432})
             set(host_arch "$ENV{PROCESSOR_ARCHITEW6432}")
         else()
@@ -27,24 +27,24 @@ elseif(CMAKE_HOST_WIN32)
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://repo.msys2.org/mingw/clangarm64/mingw-w64-clang-aarch64-pkgconf-1~1.9.5-1-any.pkg.tar.zst"
-                    f44bc7fe43f41a3329dd86e39033e06929066a11a77143b995f1b23be256054670eb508c6a48cd9530f08ce48a35204c374945d463f0e887b7dc641d63f00cb0
+                "https://mirror.msys2.org/mingw/clangarm64/mingw-w64-clang-aarch64-pkgconf-1~1.8.0-2-any.pkg.tar.zst"
+                f682bbeb4588a169a26d3c9c1ce258c0022954fa11a64e05cd803bcbb8c4e2442022c0c6bc7e54d3324359c80ea67904187d4cb3b682914f5f14a03251daae7c
             )
             set("${program}" "${PKGCONFIG_ROOT}/clangarm64/bin/pkg-config.exe" CACHE INTERNAL "")
         elseif("${host_arch}" MATCHES "64")
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://github.com/laggykiller/MINGW-packages/releases/download/pkgconf-traverse_id-1/mingw-w64-x86_64-pkgconf-1.478199b425b46e9dae36bb174f1bd08bf3ffb0f1-1-any.pkg.tar.zst"
-                    af8a765cf2607ce0bb743cf7633ff56980d320f5ae3219fe62ff2e652e6500ecd52fd200b5b6c389d53b72324e8b8d7a2ac503aee6a7b900520e22245b3da0ed
+                "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1.8.0-2-any.pkg.tar.zst"
+                55e60172d581e14e70c30532d45e6828fc31da70e878914b877d749cd20ac1abc047e6e04f171760ee8abb635ca07106853b33d6e84223d61d40013005620e43
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw64/bin/pkg-config.exe" CACHE INTERNAL "")
         else()
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://github.com/laggykiller/MINGW-packages/releases/download/pkgconf-traverse_id-1/mingw-w64-clang-i686-pkgconf-1.478199b425b46e9dae36bb174f1bd08bf3ffb0f1-1-any.pkg.tar.zst"
-                    68199ece10e9ef08c575ea774494c7ab4e9aff9206f8af947746986cc8fa2b3e14c5b91f764ee45f57615066302263bf772d6da9ce299c8ea6fb5bfa2dd0818e
+                "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-pkgconf-1~1.8.0-2-any.pkg.tar.zst"
+                e5217d9c55ede4c15706b4873761cc6e987eabc1308120a3e8406571ae2993907f3776f2b2bba18d7aaec80ef97227696058cedc1b67a773530dc1e6077b95e6
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw32/bin/pkg-config.exe" CACHE INTERNAL "")
         endif()
