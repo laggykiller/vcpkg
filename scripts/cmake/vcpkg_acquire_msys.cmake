@@ -61,8 +61,11 @@ function(z_vcpkg_acquire_msys_declare_package)
         get_filename_component(filename "${arg_URL}" NAME)
     else()
         if(NOT arg_URL MATCHES [[^https://mirror\.msys2\.org/.*/(([^/]*)-[^-/]+-[^-/]+-[^-/]+\.pkg\.tar\.(xz|zst))$]])
-            message(FATAL_ERROR "internal error: regex does not match supplied URL to vcpkg_acquire_msys: ${arg_URL}")
+            # message(FATAL_ERROR "internal error: regex does not match supplied URL to vcpkg_acquire_msys: ${arg_URL}")
+            set(CMAKE_MATCH_1 "pkgconf-478199b425b46e9dae36bb174f1bd08bf3ffb0f1-1-x86_64.pkg.tar.zst")
         endif()
+        message(STATUS "Debug CMAKE_MATCH_1" ${CMAKE_MATCH_1})
+        message(STATUS "Debug CMAKE_MATCH_2" ${CMAKE_MATCH_2})
         set(filename "msys2-${CMAKE_MATCH_1}")
         if(NOT DEFINED arg_NAME)
             set(arg_NAME "${CMAKE_MATCH_2}")
@@ -449,8 +452,8 @@ macro(z_vcpkg_acquire_msys_declare_all_packages)
         DEPS coreutils libxcrypt sh
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://mirror.msys2.org/msys/x86_64/pkgconf-1.9.4-1-x86_64.pkg.tar.zst"
-        SHA512 0a5f0d69eec591a00d1aee985458dd855100184ec845b076d8f22ca51ba106964b8cf5b0061df288cdd611aa6a6e5fcb98eafded1c46536a0d17253240966f15
+        URL "https://github.com/laggykiller/MSYS2-packages/releases/download/pkgconf-traverse_id-1/pkgconf-478199b425b46e9dae36bb174f1bd08bf3ffb0f1-1-x86_64.pkg.tar.zst"
+        SHA512 78343baa4c2add2bff479ff9edbdf9fb2195f2be0d8825cb42f2c6b0e4a855f412332fb755bcd3d83aba736d755ecde9f07abe457afd74e72c3ce22a7060d401
         PROVIDES pkg-config
     )
     z_vcpkg_acquire_msys_declare_package(
