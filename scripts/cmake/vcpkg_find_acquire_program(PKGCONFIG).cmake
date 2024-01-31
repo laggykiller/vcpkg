@@ -35,16 +35,16 @@ elseif(CMAKE_HOST_WIN32)
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~1.9.5-1-any.pkg.tar.zst"
-                    042dd1bf7c906d6b2011491bc84aa41fb3a56222d6d89451e23ddd089e5273328776f79510ae268546dd182802581a80312d2b8d6d45ffd2921d73d6215e6273
+                    "https://github.com/laggykiller/MINGW-packages/releases/download/pkgconf-traverse_id-1/mingw-w64-x86_64-pkgconf-1.478199b425b46e9dae36bb174f1bd08bf3ffb0f1-1-any.pkg.tar.zst"
+                    af8a765cf2607ce0bb743cf7633ff56980d320f5ae3219fe62ff2e652e6500ecd52fd200b5b6c389d53b72324e8b8d7a2ac503aee6a7b900520e22245b3da0ed
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw64/bin/pkg-config.exe" CACHE INTERNAL "")
         else()
             vcpkg_acquire_msys(PKGCONFIG_ROOT
                 NO_DEFAULT_PACKAGES
                 DIRECT_PACKAGES
-                    "https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-pkgconf-1~1.9.5-1-any.pkg.tar.zst"
-                    ac28090242a2f679af4dede5f63342113757cc78d35add7cc0d2c7ed928e373aa626338ff741c71dc28d67f16714d51d7e6b368551cc74a3610ca9af10327cfe
+                    "https://github.com/laggykiller/MINGW-packages/releases/download/pkgconf-traverse_id-1/mingw-w64-clang-i686-pkgconf-1.478199b425b46e9dae36bb174f1bd08bf3ffb0f1-1-any.pkg.tar.zst"
+                    68199ece10e9ef08c575ea774494c7ab4e9aff9206f8af947746986cc8fa2b3e14c5b91f764ee45f57615066302263bf772d6da9ce299c8ea6fb5bfa2dd0818e
             )
             set("${program}" "${PKGCONFIG_ROOT}/mingw32/bin/pkg-config.exe" CACHE INTERNAL "")
         endif()
