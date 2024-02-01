@@ -1,9 +1,8 @@
-vcpkg_from_github(
+vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO mirror/x264
-    REF eaa68fad9e5d201d42fde51665f2d137ae96baf0 # 0.164.3107 in pc file, to be updated below
-    SHA512 9181b222e7f8bbde4331141ff399e1ef20d3e2e7a8f939b373fbe08df6f3caa99b992afb0e559cc19f78c96f0105b88b2eb4e4b935484e25b2c15da7903d179b
-    HEAD_REF stable
+    URL https://code.videolan.org/videolan/x264.git
+    REF 4815ccadb1890572f2bf8b9d9553d56f6c9122ad # 0.164.3173 in pc file, to be updated below
+    HEAD_REF master
     PATCHES
         uwp-cflags.patch
         parallel-install.patch
@@ -17,7 +16,7 @@ vcpkg_replace_string("${SOURCE_PATH}/configure" [[/bin/bash]] [[/usr/bin/env bas
 # The pc file exports "0.164.<N>" where is the number of commits.
 # This must be fixed here because vcpkg uses a GH tarball instead of cloning the source.
 # (The binary releases on https://artifacts.videolan.org/x264/ are named x264-r<N>-<COMMIT>.)
-vcpkg_replace_string("${SOURCE_PATH}/version.sh" [[ver="x"]] [[ver="3095"]])
+vcpkg_replace_string("${SOURCE_PATH}/version.sh" [[ver="x"]] [[ver="3173"]])
 
 # Ensure that 'ENV{PATH}' leads to tool 'name' exactly at 'filepath'.
 function(ensure_tool_in_path name filepath)
