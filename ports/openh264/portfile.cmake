@@ -1,10 +1,10 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO cisco/openh264
-    REF f15f940425eebf24ce66984db2445733cf500b7b
-    SHA512 361003296e9cef2956aeff76ae4df7a949a585710facd84a92c1b4164c5a4522d6615fcc485ebc2e50be8a13feb942b870efdd28837307467081cb1eba1f17d2
+    REF 33c6546396a577afc49ae3a52a59c1d1b5c5ab71
+    SHA512 5d0cdb909a8ce2309665e72c398a6b0d3adf4cd2921a516898831154a3fe6400f41be61bee19faae075447731e3e8f2ddb36643a22ea56c48382c22d2f5798da
     PATCHES
-        0001-respect-default-library-option.patch  # https://github.com/cisco/openh264/pull/3351
+        0002-pyav-ffmpeg.patch
 )
 
 if((VCPKG_TARGET_ARCHITECTURE STREQUAL "x86" OR VCPKG_TARGET_ARCHITECTURE STREQUAL "x64"))
