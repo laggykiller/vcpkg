@@ -24,6 +24,7 @@ vcpkg_extract_source_archive(SOURCE_PATH
         msvc_symbol.patch
         arm64-coff.patch
         gmp-arm64-asm-fix-5f32dbc41afc.patch # Avoid the x18 register since it is reserved on arm64 osx and windows. Source: https://gmplib.org/repo/gmp/raw-rev/5f32dbc41afc
+        pyav-ffmpeg.cmake
 )
 
 vcpkg_list(SET OPTIONS)
