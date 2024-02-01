@@ -7,6 +7,7 @@ vcpkg_from_bitbucket(
     PATCHES
         disable-install-pdb.patch
         version.patch
+        pyav-ffmpeg.patch
 )
 
 set(ASSEMBLY_OPTIONS "-DENABLE_ASSEMBLY=OFF")
